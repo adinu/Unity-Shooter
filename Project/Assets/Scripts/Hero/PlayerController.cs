@@ -10,14 +10,14 @@ public class PlayerController : MonoBehaviour {
 	public float boundery;
 	// Update is called once per frame
 	void Update () {	
-		/*
+
 		if(Input.GetMouseButtonDown(0)){
 			GameObject newBull = Instantiate (bullet, this.transform.position + offsetBullet, Quaternion.identity) as GameObject;
 			newBull.SendMessage ("TheStart", Input.mousePosition);
 		}
 		//scoreText.text = "Score: "+score;
 		//score++;
-		*/
+		/*
 		int i = 0;
 		while(i < Input.touchCount) {
 			if (Input.GetTouch (i).phase == TouchPhase.Began) {
@@ -26,13 +26,18 @@ public class PlayerController : MonoBehaviour {
 			}
 			i++;
 		}
+		*/
 
 	}
 
 
 	void FixedUpdate () {
-		//float horizontal = Input.GetAxis("Horizontal");
-		float horizontal = Input.acceleration.x;
+		float horizontal;
+		if (!Application.isMobilePlatform) {
+			horizontal = Input.GetAxis ("Horizontal");
+		} else { 	
+			horizontal = Input.acceleration.x;
+		}
 
 		Vector3 movement = new Vector3 (horizontal, 0f, 0f);
 		this.rigidbody2D.velocity = movement*speed;

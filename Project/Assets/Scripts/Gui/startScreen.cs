@@ -5,7 +5,7 @@ public class startScreen : MonoBehaviour {
 
 	public Sprite pause_sprite1_Pause; // Drag your first sprite here
 	public Sprite pause_sprite2_Play; // Drag your second sprite here
-	private SpriteRenderer spriteRenderer; 
+	public SpriteRenderer spriteRenderer; 
 
 	private bool isGameStpoed=false;
 	// Use this for initialization
@@ -13,6 +13,8 @@ public class startScreen : MonoBehaviour {
 		// we are accessing the SpriteRenderer that is attached to the Gameobject
 
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		Screen.autorotateToPortrait = false;
+		Screen.orientation = ScreenOrientation.Landscape;
 	}
 	
 	// Update is called once per frame

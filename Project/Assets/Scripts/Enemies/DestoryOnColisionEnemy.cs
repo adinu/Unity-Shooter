@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DestoryOnColisionEnemy : MonoBehaviour {
 	private GameObject GameController;
+	public GameObject points;
 
 
 	void Start(){
@@ -18,7 +19,8 @@ public class DestoryOnColisionEnemy : MonoBehaviour {
 			Destroy(col.gameObject);
 			Destroy (this.gameObject);
 			//GameController.SendMessage("addScore", 1);
-			GameController.GetComponent<Controller>().addScore(1);
+			Instantiate(points,this.transform.position,Quaternion.identity);
+			GameController.GetComponent<Controller>().addScore(10);
 		}
 	}
 		
