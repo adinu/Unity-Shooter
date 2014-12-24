@@ -6,5 +6,4 @@ public class pointsAnimation : MonoBehaviour {
 	public void DestroyThis(){
 		Destroy (this.gameObject);
 	}
-	//hi
 }
