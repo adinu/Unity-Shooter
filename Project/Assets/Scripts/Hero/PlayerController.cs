@@ -8,6 +8,16 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 offsetBullet;
 	public float speed;
 	public float boundery;
+	bool facingRight;
+	Animator anim;
+
+	void Start(){
+		anim = GetComponent<Animator> ();
+		facingRight = true;
+
+	}
+
+
 	// Update is called once per frame
 	void Update () {	
 
@@ -39,12 +49,24 @@ public class PlayerController : MonoBehaviour {
 			horizontal = Input.acceleration.x;
 		}
 
+		anim.SetFloat ("Speed", Mathf.Abs (horizontal));
 		Vector3 movement = new Vector3 (horizontal, 0f, 0f);
 		this.rigidbody2D.velocity = movement*speed;
+
+		if ((horizontal < 0) && facingRight)
+			Flip ();
+		else if ((horizontal > 0) && !facingRight)
+			Flip ();
 		
 		this.rigidbody2D.position = new Vector3 (
 			Mathf.Clamp (this.transform.position.x, -boundery, boundery), this.transform.position.y, this.transform.position.z);
 	}
 
+	private void Flip(){
+		facingRight = !facingRight;
+		Vector3 scale = this.gameObject.transform.localScale;
+		scale.x *= -1;
+		transform.localScale = scale;
 		
+	}
 }
