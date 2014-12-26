@@ -17,8 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< Updated upstream
-	GlobalSection(MonoDevelopProperties) = preSolution
+										GlobalSection(MonoDevelopProperties) = preSolution
 =======
 				GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Stashed changes
@@ -39,8 +38,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 EndGlobal
