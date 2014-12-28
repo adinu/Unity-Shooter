@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	void Start(){
 		anim = GetComponent<Animator> ();
 		facingRight = true;
-		healthBarImage = GameObject.FindGameObjectWithTag ("healthBar").GetComponent<Image> ();
+		healthBarImage = GameObject.FindGameObjectWithTag ("HealthBar").GetComponent<Image> ();
 
 	}
 

@@ -19,7 +19,8 @@ public class BulletBehaviour : MonoBehaviour {
 		startPos = Camera.main.ScreenToWorldPoint(startPos);
 		//startPos = ray.origin;
 		//startPos.z = 0;
-		Vector3 direction = -heroPos.transform.position + startPos;
+		//Vector3 direction = -heroPos.transform.position + startPos;
+		Vector3 direction = new Vector3 (0, 1, 0);
 		//direction = direction.normalized;
 		this.gameObject.rigidbody2D.AddForce (direction *force);
 	}
