@@ -6,6 +6,7 @@ public class enemyDemage : MonoBehaviour {
 
 	private GameObject GameController;
 	public GameObject points;
+	public int pointsToScore;
 	
 	
 	void Start(){

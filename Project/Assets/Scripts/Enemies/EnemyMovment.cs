@@ -1,11 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum Movment {Vertical,Horizontal,Wave};
+
 public class EnemyMovment : MonoBehaviour {
-	//Vector3 movment = new Vector3(Random.Range(-3f,3f),Random.Range(-1f,0f),0);
-	Vector3 movment = new Vector3(0,Random.Range(-0.4f,0f),0);
 	public float speed;
+	private Vector3 directionOfMovment;
+	
+	public Movment movment;
+
+	void Start(){
+		switch (movment) {
+			case Movment.Horizontal:
+			directionOfMovment = new Vector3(1f,0f,0f);
+				break;
+			case Movment.Vertical:
+			directionOfMovment = new Vector3(0f,-1f,0f);
+				break;
+			case Movment.Wave:
+
+				break;
+		}
+
+	}
+
 	void FixedUpdate () {
-		this.rigidbody2D.velocity = movment * speed;
+		this.rigidbody2D.velocity = directionOfMovment * speed;
+	}
+
+	public Movment getMovmentType(){
+		return movment;
 	}
 }

@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Shots\BulletSize.cs" />
      <Compile Include="Assets\Scripts\Shots\EnemyBulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\Shots\EnemyShots.cs" />
+     <Compile Include="Assets\enemyClass.cs" />
      <Compile Include="Assets\enemyDemage.cs" />
      <Compile Include="Assets\pointsAnimation.cs" />
  <Reference Include="UnityEngine.UI">
