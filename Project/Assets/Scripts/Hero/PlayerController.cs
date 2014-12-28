@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour {
 	public int HP;
 	Animator anim;
 	private Image healthBarImage;
+	private GameObject GameController; 
 
 	void Start(){
 		anim = GetComponent<Animator> ();
 		facingRight = true;
 		healthBarImage = GameObject.FindGameObjectWithTag ("HealthBar").GetComponent<Image> ();
+		GameController = GameObject.FindGameObjectWithTag ("GameController");
 
 	}
 
@@ -25,12 +27,14 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {	
 
-		if(Input.GetMouseButtonDown(0)){
-			GameObject newBull = Instantiate (bullet, this.transform.position + offsetBullet, Quaternion.identity) as GameObject;
-			newBull.SendMessage ("TheStart", Input.mousePosition);
+		if (GameController.GetComponent<Controller> ().getShotsCount() > 0) {
+						if (Input.GetMouseButtonDown (0)) {  
+								GameObject newBull = Instantiate (bullet, this.transform.position + offsetBullet, Quaternion.identity) as GameObject;
+								newBull.SendMessage ("TheStart", Input.mousePosition);
+								GameController.GetComponent<Controller> ().addShots (-1);
+						}
 		}
-		//scoreText.text = "Score: "+score;
-		//score++;
+
 		/*
 		int i = 0;
 		while(i < Input.touchCount) {
