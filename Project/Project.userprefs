@@ -1,59 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Hero\PlayerController.cs">
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< Updated upstream
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\DestoryOnColisionEnemy.cs">
->>>>>>> origin/master
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/CreateEnemies.cs">
     <Files>
-      <File FileName="Assets\Scripts\Hero\PlayerController.cs" Line="74" Column="44" />
-      <File FileName="Assets\Scripts\Shots\BulletBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\enemyClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\CreateEnemies.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\enemyDemage.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\DestoryOnColisionEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyMovment.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\Shots\EnemyShots.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Shots\EnemyBulletBehaviour.cs" Line="9" Column="1" />
-=======
-      <File FileName="Assets\Scripts\Hero\PlayerController.cs" Line="20" Column="2" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/Enemy.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Enemies/Spawner.cs" Line="22" Column="45" />
-      <File FileName="Assets/Scripts/Enemies/Enemy.cs" Line="99" Column="49" />
->>>>>>> Stashed changes
->>>>>>> origin/master
+      <File FileName="Assets/Scripts/Hero/PlayerController.cs" Line="19" Column="17" />
+      <File FileName="Assets/Scripts/Enemies/CreateEnemies.cs" Line="5" Column="30" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="Enemies" expanded="True" />
-              <Node name="Hero" expanded="True">
-                <Node name="PlayerController.cs" selected="True" />
-              </Node>
-              <Node name="Shots" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Michal test/Remover.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Enemies/Spawner.cs" Line="22" Column="45" />
-      <File FileName="Assets/Scripts/Enemies/Enemy.cs" Line="99" Column="49" />
-      <File FileName="Assets/Scripts/Michal test/Remover.cs" Line="1" Column="1" />
-    </Files>
->>>>>>> 3a4434cfd9be8fc3c9eaea9e0fc3bb0c022271e2
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

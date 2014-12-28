@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 [System.Serializable]
 
 public class PlayerController : MonoBehaviour {
@@ -11,10 +12,12 @@ public class PlayerController : MonoBehaviour {
 	bool facingRight;
 	public int HP;
 	Animator anim;
+	private Image healthBarImage;
 
 	void Start(){
 		anim = GetComponent<Animator> ();
 		facingRight = true;
+		healthBarImage = GameObject.FindGameObjectWithTag ("healthBar").GetComponent<Image> ();
 
 	}
 
@@ -81,6 +84,8 @@ public class PlayerController : MonoBehaviour {
 
 	public void Hit () {
 		HP--;
+		healthBarImage.fillAmount = healthBarImage.fillAmount - 0.2f;
+
 		if (HP == 0) {
 			Kill();
 		}
