@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/CreateEnemies.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Hero/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Hero/PlayerController.cs" Line="19" Column="17" />
+      <File FileName="Assets/Scripts/Hero/PlayerController.cs" Line="97" Column="18" />
       <File FileName="Assets/Scripts/Enemies/CreateEnemies.cs" Line="5" Column="30" />
+      <File FileName="Assets/Scripts/Gui/startScreen.cs" Line="6" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
