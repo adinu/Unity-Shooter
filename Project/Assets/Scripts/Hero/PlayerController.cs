@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float boundery;
 	bool facingRight;
+	public int HP;
 	Animator anim;
 
 	void Start(){
@@ -68,5 +69,25 @@ public class PlayerController : MonoBehaviour {
 		scale.x *= -1;
 		transform.localScale = scale;
 		
+	}
+
+	void OnCollisionEnter2D (Collision2D col){
+		if (col.gameObject.tag == "enemyBullet") {
+			Destroy (col.gameObject);
+			this.Hit();
+		}
+	}
+
+
+	public void Hit () {
+		HP--;
+		if (HP == 0) {
+			Kill();
+		}
+	}
+
+
+	private void Kill (){
+		Destroy (this.gameObject);
 	}
 }
