@@ -11,9 +11,11 @@ public class enemyClass : MonoBehaviour {
 	public Sprite dead;
 	public AudioClip[] deathClips;
 	private SpriteRenderer ren;	
+	private Animator anim;
 		
 
 	void Start(){
+		anim = GetComponent<Animator> ();
 		ren = GetComponent<SpriteRenderer> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
 	}
@@ -32,8 +34,7 @@ public class enemyClass : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void Kill (){
-		Destroy (this.gameObject);
-
+		anim.SetBool ("Die", true);
 		// Play a random audioclip from the deathClips array.
 		int i = Random.Range(0, deathClips.Length);
 		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
@@ -45,7 +46,12 @@ public class enemyClass : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col){
 		if (col.gameObject.tag == "bullet") {
+			Destroy(col.gameObject);
 			this.Hit();
 		}
+	}
+
+	private void DestroyThis(){
+		Destroy (this.gameObject);
 	}
 }

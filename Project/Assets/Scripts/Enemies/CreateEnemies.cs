@@ -33,7 +33,7 @@ public class CreateEnemies : MonoBehaviour {
 					spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 					break;
 				case Movment.Wave:
-					
+					spawnPosition = new Vector3(-5f,3.3f,0f);
 					break;
 				}
 
