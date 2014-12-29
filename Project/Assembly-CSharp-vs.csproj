@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemyReward.cs" />
      <Compile Include="Assets\Scripts\Enemies\CreateEnemies.cs" />
      <Compile Include="Assets\Scripts\Enemies\DestoryOnColisionEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
@@ -76,10 +77,9 @@
      <Compile Include="Assets\Scripts\Michal test\Score.cs" />
      <Compile Include="Assets\Scripts\Michal test\ScoreShadow.cs" />
      <Compile Include="Assets\Scripts\Michal test\SetParticleSortingLayer.cs" />
-     <Compile Include="Assets\Scripts\Shots\BulletBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Shots\BulletSize.cs" />
      <Compile Include="Assets\Scripts\Shots\EnemyBulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\Shots\EnemyShots.cs" />
+     <Compile Include="Assets\Scripts\Shots\HeroShot.cs" />
      <Compile Include="Assets\Scripts\display_shots.cs" />
      <Compile Include="Assets\enemyClass.cs" />
      <Compile Include="Assets\enemyDemage.cs" />

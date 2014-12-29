@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float boundery;
 	bool facingRight;
-	public int HP;
+	public int HP; //current
+	public int maxHP; 
 	Animator anim;
 	private Image healthBarImage;
 	private GameObject GameController; 
@@ -30,7 +31,6 @@ public class PlayerController : MonoBehaviour {
 		if (GameController.GetComponent<Controller> ().getShotsCount() > 0) {
 						if (Input.GetMouseButtonDown (0)) {  
 								GameObject newBull = Instantiate (bullet, this.transform.position + offsetBullet, Quaternion.identity) as GameObject;
-								newBull.SendMessage ("TheStart", Input.mousePosition);
 								GameController.GetComponent<Controller> ().addShots (-1);
 						}
 		}
@@ -88,8 +88,10 @@ public class PlayerController : MonoBehaviour {
 
 	public void Hit () {
 		HP--;
-		healthBarImage.fillAmount = healthBarImage.fillAmount - 0.2f;
-
+		if(healthBarImage.fillAmount > 0 )
+		{
+			healthBarImage.fillAmount = healthBarImage.fillAmount - 0.2f;
+		}
 		if (HP == 0) {
 			Kill();
 		}
@@ -99,4 +101,31 @@ public class PlayerController : MonoBehaviour {
 	private void Kill (){
 		Destroy (this.gameObject);
 	}
+
+	public void reactToReard(Enum_RewardType rewardType){
+				switch (rewardType) {
+				case Enum_RewardType.BOMB:
+							 // TODO:create bomb
+						break;
+				case Enum_RewardType.LIVES: 
+						addLive();
+						break;
+				case Enum_RewardType.SHOTS:
+					GameController.GetComponent<Controller>().addShots(20);
+				
+				break;
+				}
+		}
+
+	public void addLive()
+	{
+			if (HP < maxHP) { //We can still add lives
+					HP++;
+
+				healthBarImage.fillAmount = healthBarImage.fillAmount + 0.2f;
+			}
+	}
+				
+
+
 }
