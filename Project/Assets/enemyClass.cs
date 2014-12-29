@@ -5,12 +5,13 @@ public class enemyClass : MonoBehaviour {
 	public int HP;
 	private GameObject GameController;
 	public GameObject points;
+	public GameObject [] rewards; //0-shots  1-live  2-bomb
 	public int pointsToScore;
 	public float movmentSpeed;
 	public Sprite demaged;
 	public Sprite dead;
 	public AudioClip[] deathClips;
-	public int rewardRatioBetween1To10; //1- low reward 10-highest reward
+	public Vector4 oddsVector; //[0] :shots  [1]:lives [2]:bomb  [3]:empty
 	private SpriteRenderer ren;	
 	private Animator anim;
 		
@@ -34,17 +35,32 @@ public class enemyClass : MonoBehaviour {
 	}
 
 	private void Kill (){
-		//Choose a reward according to odds 
-		float ran = Random.Range (0, 10);
-		if (ran > rewardRatioBetween1To10) {
-				anim.SetBool ("Die", true);
-				// Play a random audioclip from the deathClips array.
-				int i = Random.Range (0, deathClips.Length);
-				AudioSource.PlayClipAtPoint (deathClips [i], transform.position);
+		anim.SetBool ("Die", true);
+		// Play a random audioclip from the deathClips array.
+		int i = Random.Range (0, deathClips.Length);
+		this.gameObject.collider2D.enabled = false;
+		AudioSource.PlayClipAtPoint (deathClips [i], transform.position);
 
-				Instantiate (points, this.transform.position, Quaternion.identity);
-				GameController.GetComponent<Controller> ().addScore (pointsToScore);
+		Instantiate (points, this.transform.position, Quaternion.identity);
+		GameController.GetComponent<Controller> ().addScore (pointsToScore);
 
+		//Create reward
+		float ran = Random.Range (0f, 10f);//Choose a random number
+		print ("our random is" + ran);
+		if (ran < oddsVector.x) //shots
+		{
+			Instantiate (rewards[0], this.transform.position, Quaternion.identity);
+			return;
+		}
+		if (ran < oddsVector.y) //live
+		{
+			Instantiate (rewards[1], this.transform.position, Quaternion.identity);
+			return;
+		}
+		if (ran < oddsVector.z) //bomb
+		{
+			Instantiate (rewards[2], this.transform.position, Quaternion.identity);
+			return;
 		}
 	}
 

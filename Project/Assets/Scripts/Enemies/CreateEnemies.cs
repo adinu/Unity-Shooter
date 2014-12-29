@@ -3,7 +3,6 @@ using System.Collections;
 
 public class CreateEnemies : MonoBehaviour {
 	public GameObject[] enemies;
-	public GameObject enemy;
 	public Vector3 spawnValues;
 	public int hazardCount;
 	public float spawnWait;

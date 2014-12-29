@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [System.Serializable]
 
 public class PlayerController : MonoBehaviour {
-	public GameObject bullet;
+	public GameObject[] bullets; //0- oneHP   1-twoHP  2-Double bullet
 	Vector3 startPos;
 	public Vector3 offsetBullet;
 	public float speed;
@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour {
 	Animator anim;
 	private Image healthBarImage;
 	private GameObject GameController; 
+	private GameObject currentBullet;
 
 	void Start(){
 		anim = GetComponent<Animator> ();
 		facingRight = true;
 		healthBarImage = GameObject.FindGameObjectWithTag ("HealthBar").GetComponent<Image> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
+		currentBullet = bullets [0];
 
 	}
 
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (GameController.GetComponent<Controller> ().getShotsCount() > 0) {
 						if (Input.GetMouseButtonDown (0)) {  
-								GameObject newBull = Instantiate (bullet, this.transform.position + offsetBullet, Quaternion.identity) as GameObject;
+								GameObject newBull = Instantiate (currentBullet, this.transform.position + offsetBullet, Quaternion.identity) as GameObject;
 								GameController.GetComponent<Controller> ().addShots (-1);
 						}
 		}
@@ -83,6 +85,10 @@ public class PlayerController : MonoBehaviour {
 			Destroy (col.gameObject);
 			this.Hit();
 		}
+		if (col.gameObject.tag == "enemyBullet") {
+			Destroy (col.gameObject);
+			this.Hit();
+		}
 	}
 
 
@@ -102,16 +108,16 @@ public class PlayerController : MonoBehaviour {
 		Destroy (this.gameObject);
 	}
 
-	public void reactToReard(Enum_RewardType rewardType){
+	public void reactToReward(Enum_RewardType rewardType){
 				switch (rewardType) {
 				case Enum_RewardType.BOMB:
-							 // TODO:create bomb
+					this.Hit();
 						break;
 				case Enum_RewardType.LIVES: 
 						addLive();
 						break;
 				case Enum_RewardType.SHOTS:
-					GameController.GetComponent<Controller>().addShots(20);
+					GameController.GetComponent<Controller>().addShots(30);
 				
 				break;
 				}
@@ -125,6 +131,8 @@ public class PlayerController : MonoBehaviour {
 				healthBarImage.fillAmount = healthBarImage.fillAmount + 0.2f;
 			}
 	}
+
+
 				
 
 

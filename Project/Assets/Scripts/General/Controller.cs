@@ -7,14 +7,12 @@ public class Controller : MonoBehaviour {
 	public GameObject heroPos;
 	Vector3 startPos;
 	private int score;
-	private int shotsCount;
+	public int shotsCount;
 
 	//public Text scoreText;
 		
 	void Start(){
 		score = 0;
-		shotsCount = 20;
-
 	}
 
 	public void addScore(int points){
