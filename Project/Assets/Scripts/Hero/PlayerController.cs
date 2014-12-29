@@ -85,10 +85,13 @@ public class PlayerController : MonoBehaviour {
 			Destroy (col.gameObject);
 			this.Hit();
 		}
-		if (col.gameObject.tag == "enemyBullet") {
-			Destroy (col.gameObject);
+
+		if (col.gameObject.tag == "enemy") {
+			col.gameObject.GetComponent<enemyClass>().createEnemyExplosion();
 			this.Hit();
 		}
+
+
 	}
 
 
