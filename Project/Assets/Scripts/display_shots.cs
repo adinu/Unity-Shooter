@@ -15,12 +15,12 @@ public class display_shots : MonoBehaviour {
 		controllerGameObject = GameObject.FindGameObjectWithTag ("GameController");
 		shots_to_display = 0;
 		shotsScore = ShotsTextUi.GetComponent<Text>();  //The text component of a UI Text Object
-		shotsScore.text="# :     200 " + shots_to_display;
+		shotsScore.text="" + shots_to_display;
 	}
 	
 	void Update () {
 		shots_to_display = controllerGameObject.GetComponent<Controller> ().getShotsCount();
-		shotsScore.text = "# :      " + shots_to_display.ToString();
+		shotsScore.text =  shots_to_display.ToString();
 
 	}
 }

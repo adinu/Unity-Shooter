@@ -42,8 +42,14 @@ public class startScreen : MonoBehaviour {
 			Debug.Log ("play pressed");
 			isGameStpoed=false;
 			spriteRenderer.sprite = pause_sprite2_Play; // set the sprite to sprite1- play
+
 		} else 
 		{
+			//GameObject canvas_popUpMenu = GameObject.FindGameObjectWithTag ("popUpmenuCanvas");
+			//canvas_popUpMenu.SetActive(true);
+			//canvas_popUpMenu.GetComponent<Canvas>().enabled=true;
+			//yield return new WaitForSeconds(1);
+
 			Time.timeScale = 0;
 			Debug.Log ("pause pressed");
 			isGameStpoed=true;
