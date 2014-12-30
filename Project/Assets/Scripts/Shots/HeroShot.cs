@@ -18,7 +18,6 @@ public class HeroShot : MonoBehaviour {
 		foreach(GameObject gobject in rewardGO)
 		{
 			Physics2D.IgnoreCollision(gobject.collider2D, this.gameObject.collider2D);
-			print("blaaaaaaaaa");
 		}
 	}
 	

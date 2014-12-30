@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreateEnemies : MonoBehaviour {
+public class Tutorial : MonoBehaviour {
+
 	public GameObject[] enemies;
 	public Vector3 spawnValues;
-	public int hazardCount;
+	//public int hazardCount;
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
 	private Vector3 spawnPosition = new Vector3(1,1,0);
+	private int[] hazardCount = {3,1};
+
 	
 	void Start (){
 		StartCoroutine (SpawnWaves ());
@@ -17,13 +20,12 @@ public class CreateEnemies : MonoBehaviour {
 	IEnumerator SpawnWaves ()
 	{
 		yield return new WaitForSeconds (startWait);
-		while (true)
+		for (int k = 0; k < 2; k++)//Make two waves for the tutorial part.
 		{
-			for (int i = 0; i < hazardCount; i++){
-				int j = Random.Range(0,enemies.Length);
-
-				Movment movment = enemies[j].GetComponent<EnemyMovment>().getMovmentType();
-
+			for (int i = 0; i < hazardCount[k]; i++){
+				
+				Movment movment = enemies[k].GetComponent<EnemyMovment>().getMovmentType();
+				
 				switch (movment) {
 				case Movment.Horizontal:
 					spawnPosition = new Vector3(-4f,3.3f,0f);
@@ -35,8 +37,8 @@ public class CreateEnemies : MonoBehaviour {
 					spawnPosition = new Vector3(-5f,3.3f,0f);
 					break;
 				}
-
-				Instantiate (enemies[j], spawnPosition, Quaternion.identity);
+				
+				Instantiate (enemies[k], spawnPosition, Quaternion.identity);
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
