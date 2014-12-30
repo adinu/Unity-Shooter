@@ -20,6 +20,11 @@ public class enemyClass : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		ren = GetComponent<SpriteRenderer> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
+		GameObject [] rewardGO = GameObject.FindGameObjectsWithTag ("enemy");
+		foreach(GameObject gobject in rewardGO)
+		{
+			Physics2D.IgnoreCollision(gobject.collider2D, this.gameObject.collider2D);
+		}
 	}
 	
 
@@ -29,6 +34,7 @@ public class enemyClass : MonoBehaviour {
 		if (HP == 1)
 			ren.sprite = demaged;
 		if (HP <= 0) {
+			this.gameObject.collider2D.enabled = false;
 			ren.sprite = dead;
 			Kill();
 		}
@@ -36,10 +42,10 @@ public class enemyClass : MonoBehaviour {
 
 	public void createEnemyExplosion()
 	{
+		//this.gameObject.collider2D.enabled = false;
 		anim.SetBool ("Die", true);
 		// Play a random audioclip from the deathClips array.
 		int i = Random.Range (0, deathClips.Length);
-		this.gameObject.collider2D.enabled = false;
 		AudioSource.PlayClipAtPoint (deathClips [i], transform.position);
 	}
 
@@ -58,7 +64,6 @@ public class enemyClass : MonoBehaviour {
 
 		//Create reward
 		float ran = Random.Range (0f, 10f);//Choose a random number
-		print ("our random is" + ran);
 		if (ran < oddsVector.x) //shots
 		{
 			Instantiate (rewards[0], this.transform.position, Quaternion.identity);
@@ -77,7 +82,6 @@ public class enemyClass : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col){
-		print (col.gameObject.tag);
 		if (col.gameObject.tag == "heroBullet") {
 			ENUM_bulletType shotType = col.gameObject.GetComponent<HeroShot>().eBulletType;
 			Destroy(col.gameObject);
