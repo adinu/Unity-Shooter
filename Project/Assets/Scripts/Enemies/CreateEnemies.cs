@@ -26,7 +26,7 @@ public class CreateEnemies : MonoBehaviour {
 
 				switch (movment) {
 				case Movment.Horizontal:
-					spawnPosition = new Vector3(-5f,3.3f,0f);
+					spawnPosition = new Vector3(-4f,3.3f,0f);
 					break;
 				case Movment.Vertical:
 					spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
