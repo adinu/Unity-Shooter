@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {	
 		if (GameController.GetComponent<Controller> ().getShotsCount () > 0) {
 			if (!Application.isMobilePlatform) {	
-				if (Input.GetMouseButtonDown (0)) {  
+				if (Input.GetMouseButtonDown(0)) {  
 					Instantiate (currentBullet, this.transform.position + offsetBullet, Quaternion.identity);
 					GameController.GetComponent<Controller> ().addShots (-1);
 				}
