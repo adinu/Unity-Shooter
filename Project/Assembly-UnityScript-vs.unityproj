@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{5B9FF267-005F-A3BF-219E-FEAE2D8C894F}</ProjectGuid>
+	<ProjectGuid>{C22FA9EE-EBFF-6669-DDA9-C1F27475A5F2}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,47 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DestroyAfterTime.cs" />
-     <Compile Include="Assets\EnemyReward.cs" />
-     <Compile Include="Assets\ParachuteBeh.cs" />
-     <Compile Include="Assets\Scripts\Enemies\CreateEnemies.cs" />
-     <Compile Include="Assets\Scripts\Enemies\DestoryOnColisionEnemy.cs" />
-     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemyMovment.cs" />
-     <Compile Include="Assets\Scripts\Enemies\Spawner.cs" />
-     <Compile Include="Assets\Scripts\General\Controller.cs" />
-     <Compile Include="Assets\Scripts\General\DestroyOnCollision.cs" />
-     <Compile Include="Assets\Scripts\Gui\MainMenuManager.cs" />
-     <Compile Include="Assets\Scripts\Gui\display_score.cs" />
-     <Compile Include="Assets\Scripts\Gui\startScreen.cs" />
-     <Compile Include="Assets\Scripts\Hero\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Michal test\BackgroundParallax.cs" />
-     <Compile Include="Assets\Scripts\Michal test\BackgroundPropSpawner.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Bomb.cs" />
-     <Compile Include="Assets\Scripts\Michal test\BombPickup.cs" />
-     <Compile Include="Assets\Scripts\Michal test\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Destroyer.cs" />
-     <Compile Include="Assets\Scripts\Michal test\FollowPlayer.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Gun.cs" />
-     <Compile Include="Assets\Scripts\Michal test\HealthPickup.cs" />
-     <Compile Include="Assets\Scripts\Michal test\LayBombs.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Pauser.cs" />
-     <Compile Include="Assets\Scripts\Michal test\PickupSpawner.cs" />
-     <Compile Include="Assets\Scripts\Michal test\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\Michal test\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Remover.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Rocket.cs" />
-     <Compile Include="Assets\Scripts\Michal test\Score.cs" />
-     <Compile Include="Assets\Scripts\Michal test\ScoreShadow.cs" />
-     <Compile Include="Assets\Scripts\Michal test\SetParticleSortingLayer.cs" />
-     <Compile Include="Assets\Scripts\Shots\EnemyBulletBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Shots\EnemyShots.cs" />
-     <Compile Include="Assets\Scripts\Shots\HeroShot.cs" />
-     <Compile Include="Assets\Scripts\display_shots.cs" />
-     <Compile Include="Assets\Tutorial.cs" />
-     <Compile Include="Assets\enemyClass.cs" />
-     <Compile Include="Assets\enemyDemage.cs" />
-     <Compile Include="Assets\pointsAnimation.cs" />
+     <Compile Include="Assets\Pause Menu\PauseMenu.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
