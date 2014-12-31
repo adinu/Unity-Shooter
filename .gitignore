@@ -62,3 +62,19 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+Project/Assembly-CSharp-vs.csproj
+
+Project/Assembly-UnityScript-vs.unityproj
+
+Project/Assembly-UnityScript.unityproj
+
+Project/Assets/Scenes/1_SceneMain.unity
+
+Project/Assets/Scripts/Hero/PlayerController.cs
+
+Project/Project-csharp.sln
+
+Project/Project.sln
+
+Project/Project.userprefs
